@@ -14,7 +14,7 @@ char *get_input(void)
 
 	line = getline(&input, &len, stdin);
 
-	if (line == - 1)
+	if (line == -1)
 	{
 		if (isatty(STDIN_FILENO))
 			write(STDOUT_FILENO, "\n", 1);
@@ -26,7 +26,7 @@ char *get_input(void)
 		return (NULL);
 	}
 
-	for(; i < (line - 1); i++)
+	for (; i < (line - 1); i++)
 	{
 		if (input[i] != ' ')
 			nospace += 1;
@@ -34,8 +34,6 @@ char *get_input(void)
 
 	if (nospace == 0)
 		return (NULL);
-	
-	
 	input[line - 1] = '\0';
 	return (input);
 }

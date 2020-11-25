@@ -69,7 +69,7 @@ int built_ins(char *input)
 		return (0);
 	while (built_ins[i].name != NULL)
 	{
-		if (strcmp(input, built_ins[i].name) == 0)
+		if (_strcmp(input, built_ins[i].name) == 0)
 		{
 			built_ins[i].f(input);
 			return (0);
