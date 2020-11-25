@@ -12,6 +12,8 @@ int main(void)
 	char *input = NULL, *twc = NULL;
 	int cont = 0;
 
+	signal(SIGINT, kill_signal);
+	
 	while (1)
 	{
 		print_prompt();
@@ -22,6 +24,10 @@ int main(void)
 		alltokens = get_tokenization(input);
 		free(input);
 		twc = get_path(alltokens);
+		if (twc == NULL)
+		{
+			continue;
+		}
 		init_execution(alltokens, twc);
 	}
 
