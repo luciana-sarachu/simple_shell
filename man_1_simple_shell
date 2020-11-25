@@ -1,0 +1,54 @@
+.TH simple_shell "1.0" "26 November 2020" "simple_shell man page" "simple_shell man page"
+
+.SH NAME
+
+.B simple shell
+
+- a standard command interpreter that reads commands from standard input and executes them.
+
+.SH SYNOPSIS
+
+#include "holberton.h"
+
+.PP
+
+.shell
+
+.PP
+
+shell [option_name] [argument ...]
+
+.SH DESCRIPTION
+
+shell is a command programming language that executes commands read from a terminal standard input. It is the program that is running when a user logs into the system. After receiving a command, the shell tokenizes it into words using   as a delimiter. The first word is considered the command and all remaining words are considered arguments to that command.
+
+.SH RETURN
+
+Upon successful return 0, If the program fails due to command is entered incorrectly or does not exist in the $PATH, return error and exit.
+
+.SH BUILT-INS
+
+.PP
+
+env - When entered, shell prints the current environment to standard output.
+
+.PP
+
+exit - When entered, shell exits the shell program.
+
+.SH ALSO SEE
+
+man sh
+
+.SH NOTES
+
+All files and code used were created and compiled on Ubuntu 14.04.4 LTS using GCC 4.8.4
+
+.SH BUGS
+
+There are many features and builtin commands that are not implimented in this simple shell such as aliases, cd, and logical operators.
+
+.SH AUTHOR
+
+Roberto Ribeiro and Luciana Sarachu.
+
