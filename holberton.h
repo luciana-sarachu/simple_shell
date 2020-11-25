@@ -41,7 +41,7 @@ char *_getenv(const char *name);
 void free_all(char **alltokens);
 char *_strcpy(char *dest, char *src);
 char *_strncat(char *dest, char *src);
-
+int _strcmp(char *s1, char *s2);
 void kill_signal(int sig);
 
 #endif
