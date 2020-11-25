@@ -12,7 +12,7 @@ int main(void)
 	char *input = NULL, *twc = NULL;
 	int cont = 0;
 
-	signal(SIGINT, kill_signal);
+	/*signal(SIGINT, kill_signal); */
 	
 	while (1)
 	{
