@@ -9,7 +9,7 @@ That means that the command is executed by writing the name of the command follo
 After receiving a command, our shell tokenizes it into words using " " as a delimiter.
 The first word is considered the command and all remaining words are considered arguments to that command.
 
-##Getting Started
+###Getting Started
 
 First, clone this repository, then, compile this way: gcc  Wall  Werror -Wextra -pedantic *. c  o hsh
 The Shell can work in interactive mode: $ ./hsh
@@ -21,11 +21,11 @@ or non-interactive mode: $ echo /bin/ls | ./hsh
 If there are no arguments and the standard input is connected to a terminal (Isatty), the shell is considered an interactive shell.
 If the standard input is used with pipeline operator  |  to connect the command means the shell is in non-interactive mode.
 
-##PATH
+###PATH
 
 It is the separated list of directories in which the shell looks for commands.
 
-##Builtins
+#####Builtins
 
 There are some builtins programmed into hsh:
 
