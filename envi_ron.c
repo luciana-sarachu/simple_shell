@@ -31,28 +31,25 @@ char *_strcpy(char *dest, char *src)
  */
 char *envi_ron(char *path)
 {
-	char *copyenv = NULL, *tempenv = NULL, *aux = NULL;
+	char *copyenv = NULL;
 	int i = 0;
 
 	while (environ[i] != NULL)
 	{
-		copyenv = malloc(_strlen(environ[i]) + 1);
-		if (copyenv == NULL)
+		if (_strstr(environ[i], path))
 		{
-			perror("ERROR: Insufficient memory allocation");
-			exit(1);
+			if (environ[i][_strlen(path)] == '=')
+			{
+				copyenv = malloc(_strlen(environ[i]) - _strlen(path));
+				if (copyenv == NULL)
+				{
+					perror("ERROR: Insufficient memory allocation");
+					exit(1);
+				}
+				_strcpy(copyenv, environ[i] + (_strlen(path) + 1));
+				return (copyenv);
+			}
 		}
-		_strcpy(copyenv, environ[i]);
-		strtok(copyenv, "=");
-		if (_strcmp(copyenv, path) == 0)
-		{
-			aux = strtok(NULL, "=");
-			tempenv = _strdup(aux);
-			aux = NULL;
-			free(copyenv);
-			return (tempenv);
-		}
-		free(copyenv);
 		i++;
 	}
 	return (NULL);
@@ -66,7 +63,6 @@ char *envi_ron(char *path)
  *
  * Return: Always 0.
  */
-
 char *_strdup(char *str)
 {
 	char *new_str;
@@ -113,4 +109,33 @@ int _strcmp(char *s1, char *s2)
 		a++;
 	}
 	return (0);
+}
+/**
+ * _strstr - Write a function that locates a substring.
+ *
+ * @env: string
+ *
+ * @path: substring
+ * Return: Always 0.
+ */
+
+char *_strstr(char *env, char *path)
+
+{
+	int i;
+
+	if (*path == 0)
+		return (env);
+	for (i = 0; path[i] != '\0'; i++)
+	{
+		if (path[i] != env[i])
+		{
+			break;
+		}
+	}
+	if (path[i] == '\0')
+	{
+		return (env);
+	}
+	return (NULL);
 }
