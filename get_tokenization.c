@@ -8,7 +8,7 @@
 char **get_tokenization(char *input)
 {
 	char **alltokens = NULL;
-	int index = 0;
+	int index = 0, i = 0;
 	char *token = NULL;
 
 	alltokens = malloc(sizeof(char *) * SIZE_BUFF);
