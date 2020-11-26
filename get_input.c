@@ -33,7 +33,10 @@ char *get_input(void)
 	}
 
 	if (nospace == 0)
+	{
+		free(input);
 		return (NULL);
+	}
 	input[line - 1] = '\0';
 	return (input);
 }
